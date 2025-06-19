@@ -1,0 +1,268 @@
+/* Improved CSS for Spotify-style lyrics player */
+
+/* Base styling */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+.mode-toggle-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.mode-toggle-btn:hover {
+  background: #333;
+}
+
+/* Lyrics container */
+.lyrics-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 20px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
+}
+
+.lyrics-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lyrics-container::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.lyrics-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Lyrics content */
+.lyrics-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Lyrics line */
+.lyrics-line {
+  margin-bottom: 1.5rem;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  display: block;
+  position: relative;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Active and inactive states */
+.lyrics-line.active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.05);
+}
+
+.lyrics-line.inactive {
+  opacity: 0.5;
+  filter: blur(1px);
+  transform: scale(1);
+}
+
+/* Player mode text styling */
+.player-text-container {
+  position: relative;
+  display: inline-block;
+}
+
+.text-background {
+  position: relative;
+  display: inline-block;
+  color: #aaa;
+  font-weight: normal;
+  font-size: 24px;
+  white-space: pre-wrap;
+}
+
+.text-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  white-space: pre-wrap;
+}
+
+/* Editor mode word styling */
+.word {
+  font-size: 24px;
+  color: #aaa;
+  margin: 0 4px;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.1s ease, font-weight 0.1s ease;
+}
+
+.word.highlighted {
+  color: inherit;
+  font-weight: bold;
+}
+
+/* Word editor panel */
+.word-editor {
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(50, 50, 50, 0.8);
+  color: #fff;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.word-editor h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.word-editor label {
+  display: flex;
+  align-items: center;
+}
+
+.word-editor input {
+  margin-left: 10px;
+}
+
+.word-editor button {
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: none;
+  background: #444;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s ease;
+}
+
+.word-editor button:hover {
+  background: #555;
+}
+
+/* Footer area with controls */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.8);
+  border-top: 1px solid #333;
+}
+
+/* Audio player */
+.audio-player {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 4px;
+}
+
+/* File inputs */
+.file-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+}
+
+/* Editor controls */
+.editor-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background: rgba(50, 50, 50, 0.5);
+  margin-bottom: 20px;
+}
+
+.editor-controls label {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.editor-controls input,
+.editor-controls select {
+  margin-left: 5px;
+}
+
+.editor-controls input[type="range"] {
+  width: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lyrics-line {
+    font-size: 20px;
+  }
+
+  .editor-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer {
+    padding: 15px 10px;
+  }
+}
