@@ -1,0 +1,10 @@
+[00:00:00] Audio: Upbeat jazz intro
+[00:00:05] Speaker 1: Welcome to our podcast! Today we're talking about music and accessibility.
+[00:00:15] Speaker 2: That's right, and I'm excited to share some insights about how we can make audio content more inclusive.
+[00:00:25] Audio: Soft background ambiance
+[00:00:30] Speaker 1: Let's start with the basics. What does accessibility mean in the context of audio content?
+[00:00:40] Speaker 2: Great question! It means ensuring that people with hearing impairments can also understand and enjoy the full experience.
+[00:00:50] Audio: Dramatic strings
+[00:00:55] Speaker 1: That sounds really important. Can you give us some examples?
+[00:01:05] Speaker 2: Absolutely! Visual transcripts, music indicators, and emotional context are all crucial elements.
+[00:01:15] Audio: Peaceful piano outro
